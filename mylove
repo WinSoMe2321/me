@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy New Year ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ---------- GLOBAL ---------- */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:#000;
+  color:#fff;
+  overflow:hidden;
+}
+section{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:40px 20px;
+  opacity:0;
+  transform:translateY(30px);
+  pointer-events:none;
+  transition:opacity 1.2s ease, transform 1.2s ease;
+}
+section.active{
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+h1,h2{
+  font-weight:500;
+  text-align:center;
+  text-shadow:0 0 18px rgba(255,155,189,.7);
+}
+p{
+  max-width:720px;
+  text-align:center;
+  line-height:1.6;
+  opacity:.9;
+}
+button{
+  margin-top:25px;
+  padding:12px 30px;
+  border-radius:30px;
+  border:none;
+  background:#fff;
+  color:#000;
+  font-size:16px;
+  cursor:pointer;
+  box-shadow:0 0 20px rgba(255,255,255,.7);
+  transition:.3s;
+}
+button:hover{transform:scale(1.08)}
+input{
+  padding:12px;
+  border-radius:25px;
+  border:none;
+  width:260px;
+  margin-top:15px;
+  text-align:center;
+}
+
+/* ---------- FLOATING HEARTS ---------- */
+.hearts{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:0;
+}
+.heart{
+  position:absolute;
+  bottom:-40px;
+  width:18px;
+  height:18px;
+  background:rgba(255,155,189,.9);
+  transform:rotate(45deg);
+  filter:blur(.4px);
+  animation:float 18s linear infinite;
+  box-shadow:0 0 18px rgba(255,155,189,.9);
+  opacity:.2;
+}
+.heart::before,
+.heart::after{
+  content:"";
+  position:absolute;
+  width:18px;
+  height:18px;
+  background:inherit;
+  border-radius:50%;
+}
+.heart::before{top:-9px;left:0}
+.heart::after{left:-9px;top:0}
+
+@keyframes float{
+  from{transform:translateY(0) rotate(45deg)}
+  to{transform:translateY(-120vh) rotate(45deg)}
+}
+
+/* ---------- HEARTBEAT ---------- */
+.beat{
+  font-size:22px;
+  margin:18px 0;
+  opacity:0;
+  transform:scale(.9);
+  transition:1s;
+}
+.beat.show{
+  opacity:1;
+  transform:scale(1);
+}
+.pulse{
+  animation:pulse 1.4s infinite;
+}
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.05)}
+  100%{transform:scale(1)}
+}
+
+/* ---------- FIREWORKS ---------- */
+.firework{
+  position:absolute;
+  width:6px;height:6px;
+  background:#fff;
+  border-radius:50%;
+  animation:explode 1.5s ease-out infinite;
+}
+@keyframes explode{
+  from{transform:scale(0);opacity:1}
+  to{transform:scale(12);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<!-- PAGE 1 -->
+<section id="p1" class="active">
+  <h1>Happy New Year Mrs. SHIPRA BOORA ❤️</h1>
+  <p>This year begins the same way my heart always does — with you.</p>
+  <input type="password" id="pass1" placeholder="Enter password">
+  <button onclick="checkP1()">Enter</button>
+</section>
+
+<!-- PAGE 2 -->
+<section id="p2">
+  <p>I didn’t want to step into a new year without speaking from my heart.</p>
+  <p>Not loudly, not dramatically — just honestly.</p>
+  <p>Last year taught me many things, but the most important one was you.</p>
+  <p>Your presence has a quiet way of making everything feel steady.</p>
+  <p>In moments of doubt, you became my calm.</p>
+  <p>In moments of happiness, you became my reason.</p>
+  <p>I don’t say it enough, but I notice everything you do, everything you are.</p>
+  <p>Your patience, your care, the way you stay — it all matters to me.</p>
+  <p>Loving you hasn’t been loud, but it has been real.</p>
+  <p>You are not just someone I love… you are someone I’m grateful for.</p>
+  <p>Every prayer I make somehow carries your name.</p>
+  <p><b>Because you are everything I pray for.</b></p>
+  <button onclick="go('p3')">Feel my heartbeat</button>
+</section>
+
+<!-- PAGE 3 -->
+<section id="p3">
+  <div class="beat">This heart learned how to love because of you.</div>
+  <div class="beat">It found peace in places it never knew existed.</div>
+  <div class="beat">Through silence and storms, it kept choosing you.</div>
+  <div class="beat">I choose you — not once, but every single day.</div>
+  <div class="beat">This heartbeat carries dreams that begin and end with us.</div>
+  <div class="beat"><b>As long as this heart beats, it beats for you — forever.</b></div>
+  <button onclick="go('p4')">My promise</button>
+</section>
+
+<!-- PAGE 4 -->
+<section id="p4">
+  <p>I promise to choose you, my wifey.</p>
+  <p>I promise to grow with you.</p>
+  <p>I promise to protect what we have.</p>
+  <p><b>I promise I will never let you down.</b></p>
+  <button onclick="go('p5')">One last secret</button>
+</section>
+
+<!-- PAGE 5 -->
+<section id="p5">
+  <p>Some things aren’t meant for the world.</p>
+  <p>They’re meant for just us.</p>
+  <input type="password" id="pass2" placeholder="Enter password">
+  <button onclick="checkP2()">Unlock</button>
+</section>
+
+<!-- PAGE 6 -->
+<section id="p6">
+  <h1>HAPPY NEW YEAR ❤️</h1>
+  <p>Another year begins, and my wish stays the same — you.</p>
+  <p>No matter how many years pass, my love will always find its way back to you.</p>
+</section>
+
+<script>
+/* PASSWORDS */
+const p1pass="i want to eat your pie";
+const p2pass="my everyTHING belongs to you";
+
+/* NAVIGATION */
+function go(id){
+  document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  handleHearts(id);
+  if(id==="p3") startHeartbeat();
+  if(id==="p6") fireworks();
+}
+
+/* PASSWORD CHECK */
+function checkP1(){
+  if(pass1.value===p1pass) go("p2");
+  else alert("Hehe… only you can unlock this 😉");
+}
+function checkP2(){
+  if(pass2.value===p2pass) go("p6");
+  else alert("Almost… try again ❤️");
+}
+
+/* HEARTBEAT */
+function startHeartbeat(){
+  let beats=document.querySelectorAll(".beat");
+  let i=0;
+  let int=setInterval(()=>{
+    if(i<beats.length){
+      beats[i].classList.add("show","pulse");
+      i++;
+    }else clearInterval(int);
+  },1400);
+}
+
+/* FLOATING HEART CONTROL */
+const heartsBox=document.getElementById("hearts");
+function spawnHearts(count){
+  heartsBox.innerHTML="";
+  for(let i=0;i<count;i++){
+    let h=document.createElement("div");
+    h.className="heart";
+    h.style.left=Math.random()*100+"%";
+    h.style.animationDuration=14+Math.random()*10+"s";
+    h.style.opacity=.15+Math.random()*.15;
+    heartsBox.appendChild(h);
+  }
+}
+function handleHearts(page){
+  if(page==="p5") heartsBox.innerHTML="";
+  else if(page==="p3") spawnHearts(2);
+  else if(page==="p6") spawnHearts(18);
+  else spawnHearts(6);
+}
+spawnHearts(4);
+
+/* FIREWORKS */
+function fireworks(){
+  for(let i=0;i<12;i++){
+    let f=document.createElement("div");
+    f.className="firework";
+    f.style.left=Math.random()*100+"%";
+    f.style.top=Math.random()*60+"%";
+    document.body.appendChild(f);
+    setTimeout(()=>f.remove(),1500);
+  }
+}
+</script>
+
+</body>
+</html>
